@@ -27,11 +27,157 @@ This shift is not just technical — it is practical. Generative AI is already b
 
 Tools like **Midjourney** and **DALL-E** are just the visible surface. Behind them lie fascinating architectures — GANs, VAEs, and Diffusion Models — each with its own way of "imagining."
 
+
+
 ---
 
 > The sections that follow will walk you through each of these technologies, step by step, using the same simple language. No prior knowledge required.
 
 ---
+### 3.2. GANs and VAEs: Two Early Ways for AI to Create Images
+
+Before Diffusion Models became the most popular approach, two important families of generative models helped AI learn how to create images: **GANs** and **VAEs**.
+
+They do not work in the same way, but both have the same big goal:  
+**to generate new images that look meaningful, realistic, or similar to the data they learned from.**
+
+In simple words, these models taught machines not only to recognize images, but also to **produce** them.
+
+---
+
+#### 3.2.1. GANs: The "Forger vs. Police Officer"
+
+**GAN** stands for **Generative Adversarial Network**.
+
+A GAN is made of **two neural networks** that compete with each other:
+
+1. **The Generator**: it tries to create a fake image.
+2. **The Discriminator**: it checks whether the image is real or fake.
+
+You can imagine this as a game between:
+
+- a **forger**, who tries to paint a fake artwork,
+- and a **police officer**, who tries to detect the fake one.
+
+At the beginning, the fake images are poor and easy to detect.  
+But after many rounds of training, the forger becomes better and better.  
+In the end, the generated images can become very realistic.
+
+<div align="center">
+    <p><em>Simple analogy: the Generator creates, the Discriminator judges.</em></p>
+</div>
+
+##### Why are GANs interesting?
+
+GANs became famous because they can generate:
+
+- realistic human faces,
+- artistic images,
+- fashion designs,
+- image-to-image transformations.
+
+They were among the first models to produce highly impressive visual results.
+
+##### Main strength of GANs
+
+The main advantage of GANs is their ability to produce **sharp and realistic images**.
+
+##### Main limitation of GANs
+
+However, GANs can be difficult to train.  
+Sometimes, the Generator keeps producing very similar outputs instead of diverse ones. This problem is called **mode collapse**.
+
+In other words, the model may learn only a few "good tricks" instead of learning the full variety of the data.
+
+---
+
+#### 3.2.2. VAEs: The "Compression and Reconstruction Machine"
+
+**VAE** stands for **Variational Autoencoder**.
+
+A VAE works differently from a GAN.  
+Instead of using a competition between two networks, it tries to **compress** an image into a simpler internal representation, then **rebuild** it.
+
+A simple analogy is a **compression machine** or a **short cooking recipe**:
+
+- first, the model takes a complex image,
+- then it reduces it into a small summary,
+- finally, it uses that summary to reconstruct the image or generate a new similar one.
+
+So a VAE learns the "hidden recipe" behind images.
+
+##### How does it work?
+
+A VAE has two main parts:
+
+1. **Encoder**: compresses the image into a compact latent representation.
+2. **Decoder**: reconstructs the image from that representation.
+
+This latent space is very useful because it allows the model to generate new images by slightly changing the learned representation.
+
+##### Why are VAEs interesting?
+
+VAEs are useful because they:
+
+- learn a structured representation of data,
+- can generate new variations of existing images,
+- are easier and more stable to train than GANs.
+
+##### Main limitation of VAEs
+
+The generated images are often **less sharp** and more blurry than GAN-generated images.
+
+So, compared with GANs:
+
+- **GANs** often give more realistic images,
+- **VAEs** are often more stable and easier to understand.
+
+---
+
+#### 3.2.3. GANs vs. VAEs: A Simple Comparison
+
+Both models are important in the history of Generative AI in Computer Vision.
+
+- **GANs** focus on realism through competition.
+- **VAEs** focus on learning a compact representation and reconstructing images.
+
+A very simple way to remember them is:
+
+- **GAN = a battle between creator and judge**
+- **VAE = compress, understand, and rebuild**
+
+<div align="center">
+
+| Model | Main Idea | Strength | Weakness |
+|-------|-----------|----------|----------|
+| **GAN** | Create through competition | Very realistic images | Hard to train, mode collapse |
+| **VAE** | Compress then reconstruct | Stable and structured learning | Blurrier images |
+
+</div>
+
+---
+
+#### 3.2.4. Why They Still Matter
+
+Even if newer models like Diffusion Models now achieve better results in many cases, GANs and VAEs remain essential because they introduced key ideas in generative AI.
+
+They helped researchers answer an important question:
+
+> How can a machine learn not only to see an image, but also to imagine a new one?
+
+They are also important because they prepared the path for the more advanced image generation systems used today.
+
+---
+
+#### Transition to the Next Model
+
+GANs and VAEs were major steps in the evolution of Generative AI.  
+But researchers still wanted models that were more stable, more controllable, and better at generating diverse high-quality images.
+
+This is why **Diffusion Models** became so important.
+
+In the next section, we will see how these models start from pure noise and gradually build a clear image step by step.
+
 
 ### 3.3. Diffusion Models: The "Noise Cleaners"
 
